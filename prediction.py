@@ -30,13 +30,13 @@ class DistilBERTClass(torch.nn.Module):
 
 def prediction(model,df1):
     #Input to tokenizer -->
-    tok_path = r"C:\Users\snara\Downloads\Project\vocab_distilbert_news.bin"
+    tok_path = "\vocab_distilbert_news.bin"
     tokenizer = transformers.DistilBertTokenizer.from_pretrained(tok_path)
     df1=df1.dropna()
     df1=df1.reset_index(drop=True)
     fin_outputs=[]
     #Input to model -->
-    model_path= r"C:\Users\snara\Downloads\Project\pytorch_distilbert_news.bin"
+    model_path= "\pytorch_distilbert_news.bin"
     model = DistilBERTClass()
     model.to(device)
     model.load_state_dict(torch.load(model_path))
